@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./create-marca.component.css']
 })
 export class CreateMarcaComponent implements OnInit {
-
+  
   constructor() { }
 
   ngOnInit() {

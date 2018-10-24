@@ -1,16 +1,28 @@
 <!--Encabezado general-->
 <app-header></app-header>
-<mat-card>
+<!--Cuerpo del documento-->
+<mat-card class="example-card">
     <mat-card-header>
+        <div mat-card-avatar class="example-header-image">
+        </div>
         <mat-card-title>Marcas</mat-card-title>
-        <mat-card-subtitle>Marcas de productos</mat-card-subtitle>
+        <mat-card-subtitle>
+            <button mat-raised-button color="primary" (click)="mostrarCreateMarca()">{{btnCreateMarca}}</button>
+        </mat-card-subtitle>
     </mat-card-header>
-    <mat-card-content>
+    <mat-card-content *ngIf="flagCreateMarca">
         <!--Create Marca-->
         <app-create-marca></app-create-marca>
-        <!--List Marca-->
-        <app-list-marca></app-list-marca>
+        <!--Create Marca-->
     </mat-card-content>
+    <!--List Marca-->
+    <mat-slide-toggle (change)="mostrarListMarca()">
+        Listar marcas
+    </mat-slide-toggle>
+    <div *ngIf="flagListMarca">
+        <app-list-marca></app-list-marca>
+    </div>
+    <!--List Marca-->
 </mat-card>
 <!--Footer general-->
 <app-footer></app-footer>
